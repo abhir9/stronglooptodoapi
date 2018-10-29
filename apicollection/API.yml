@@ -1,0 +1,1176 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: todoapi
+basePath: /api
+paths:
+  '/appusers/{id}/accessTokens/{fk}':
+    get:
+      tags:
+        - appuser
+      summary: Find a related item by id for accessTokens.
+      operationId: appuser.prototype.__findById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: appuser id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - appuser
+      summary: Delete a related item by id for accessTokens.
+      operationId: appuser.prototype.__destroyById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: appuser id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - appuser
+      summary: Update a related item by id for accessTokens.
+      operationId: appuser.prototype.__updateById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: appuser id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+  '/appusers/{id}/accessTokens':
+    get:
+      tags:
+        - appuser
+      summary: Queries accessTokens of appuser.
+      operationId: appuser.prototype.__get__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: appuser id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AccessToken'
+      deprecated: false
+    post:
+      tags:
+        - appuser
+      summary: Creates a new instance in accessTokens of this model.
+      operationId: appuser.prototype.__create__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: appuser id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - appuser
+      summary: Deletes all accessTokens of this model.
+      operationId: appuser.prototype.__delete__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: appuser id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/appusers/{id}/accessTokens/count':
+    get:
+      tags:
+        - appuser
+      summary: Counts accessTokens of appuser.
+      operationId: appuser.prototype.__count__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: appuser id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /appusers:
+    post:
+      tags:
+        - appuser
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: appuser.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/appuser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/appuser'
+      deprecated: false
+    put:
+      tags:
+        - appuser
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: appuser.upsert__put_appusers
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/appuser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/appuser'
+      deprecated: false
+    patch:
+      tags:
+        - appuser
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: appuser.upsert__patch_appusers
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/appuser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/appuser'
+      deprecated: false
+    get:
+      tags:
+        - appuser
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: appuser.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/appuser'
+      deprecated: false
+  /appusers/replaceOrCreate:
+    post:
+      tags:
+        - appuser
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: appuser.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/appuser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/appuser'
+      deprecated: false
+  /appusers/upsertWithWhere:
+    post:
+      tags:
+        - appuser
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: appuser.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/appuser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/appuser'
+      deprecated: false
+  '/appusers/{id}/exists':
+    get:
+      tags:
+        - appuser
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'appuser.exists__get_appusers_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/appusers/{id}':
+    head:
+      tags:
+        - appuser
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'appuser.exists__head_appusers_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - appuser
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: appuser.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/appuser'
+      deprecated: false
+    delete:
+      tags:
+        - appuser
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: appuser.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - appuser
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'appuser.prototype.updateAttributes__put_appusers_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: appuser id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/appuser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/appuser'
+      deprecated: false
+    patch:
+      tags:
+        - appuser
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'appuser.prototype.updateAttributes__patch_appusers_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: appuser id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/appuser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/appuser'
+      deprecated: false
+  '/appusers/{id}/replace':
+    post:
+      tags:
+        - appuser
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: appuser.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/appuser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/appuser'
+      deprecated: false
+  /appusers/findOne:
+    get:
+      tags:
+        - appuser
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: appuser.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/appuser'
+      deprecated: false
+  /appusers/update:
+    post:
+      tags:
+        - appuser
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: appuser.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/appuser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /appusers/count:
+    get:
+      tags:
+        - appuser
+      summary: Count instances of the model matched by where from the data source.
+      operationId: appuser.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /appusers/change-stream:
+    post:
+      tags:
+        - appuser
+      summary: Create a change stream.
+      operationId: appuser.createChangeStream__post_appusers_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - appuser
+      summary: Create a change stream.
+      operationId: appuser.createChangeStream__get_appusers_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  /appusers/login:
+    post:
+      tags:
+        - appuser
+      summary: Login a user with username/email and password.
+      operationId: appuser.login
+      parameters:
+        - name: credentials
+          in: body
+          required: true
+          schema:
+            type: object
+        - name: include
+          in: query
+          description: >-
+            Related objects to include in the response. See the description of
+            return value for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: >+
+              The response body contains properties of the AccessToken created
+              on login.
+
+              Depending on the value of `include` parameter, the body may
+              contain additional properties:
+
+                - `user` - `U+007BUserU+007D` - Data of the currently logged in user. (`include=user`)
+
+            type: object
+      deprecated: false
+  /appusers/logout:
+    post:
+      tags:
+        - appuser
+      summary: Logout a user with access token.
+      operationId: appuser.logout
+      parameters: []
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /appusers/confirm:
+    get:
+      tags:
+        - appuser
+      summary: Confirm a user registration with email verification token.
+      operationId: appuser.confirm
+      parameters:
+        - name: uid
+          in: query
+          required: true
+          type: string
+        - name: token
+          in: query
+          required: true
+          type: string
+        - name: redirect
+          in: query
+          required: false
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /appusers/reset:
+    post:
+      tags:
+        - appuser
+      summary: Reset password for a user with email.
+      operationId: appuser.resetPassword
+      parameters:
+        - name: options
+          in: body
+          required: true
+          schema:
+            type: object
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /todos:
+    post:
+      tags:
+        - todo
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: todo.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/todo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/todo'
+      deprecated: false
+    put:
+      tags:
+        - todo
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: todo.upsert__put_todos
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/todo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/todo'
+      deprecated: false
+    patch:
+      tags:
+        - todo
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: todo.upsert__patch_todos
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/todo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/todo'
+      deprecated: false
+    get:
+      tags:
+        - todo
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: todo.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/todo'
+      deprecated: false
+  /todos/replaceOrCreate:
+    post:
+      tags:
+        - todo
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: todo.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/todo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/todo'
+      deprecated: false
+  /todos/upsertWithWhere:
+    post:
+      tags:
+        - todo
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: todo.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/todo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/todo'
+      deprecated: false
+  '/todos/{id}/exists':
+    get:
+      tags:
+        - todo
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'todo.exists__get_todos_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/todos/{id}':
+    head:
+      tags:
+        - todo
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'todo.exists__head_todos_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - todo
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: todo.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/todo'
+      deprecated: false
+    delete:
+      tags:
+        - todo
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: todo.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - todo
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'todo.prototype.updateAttributes__put_todos_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: todo id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/todo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/todo'
+      deprecated: false
+    patch:
+      tags:
+        - todo
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'todo.prototype.updateAttributes__patch_todos_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: todo id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/todo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/todo'
+      deprecated: false
+  '/todos/{id}/replace':
+    post:
+      tags:
+        - todo
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: todo.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/todo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/todo'
+      deprecated: false
+  /todos/findOne:
+    get:
+      tags:
+        - todo
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: todo.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/todo'
+      deprecated: false
+  /todos/update:
+    post:
+      tags:
+        - todo
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: todo.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/todo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /todos/count:
+    get:
+      tags:
+        - todo
+      summary: Count instances of the model matched by where from the data source.
+      operationId: todo.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /todos/change-stream:
+    post:
+      tags:
+        - todo
+      summary: Create a change stream.
+      operationId: todo.createChangeStream__post_todos_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - todo
+      summary: Create a change stream.
+      operationId: todo.createChangeStream__get_todos_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  '/todos/{id}/download':
+    get:
+      tags:
+        - todo
+      operationId: todo.download
+      parameters: []
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+tags:
+  - name: appuser
+  - name: todo
+consumes:
+  - application/json
+  - application/x-www-form-urlencoded
+  - application/xml
+  - text/xml
+produces:
+  - application/json
+  - application/xml
+  - text/xml
+  - application/javascript
+  - text/javascript
+definitions:
+  x-any:
+    properties: {}
+  AccessToken:
+    properties:
+      id:
+        type: string
+      ttl:
+        default: 1209600
+        description: time to live in seconds (2 weeks by default)
+        type: number
+        format: double
+      created:
+        type: string
+        format: date-time
+      userId:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - id
+    additionalProperties: false
+  appuser:
+    properties:
+      realm:
+        type: string
+      username:
+        type: string
+      credentials:
+        type: object
+      challenges:
+        type: object
+      email:
+        type: string
+      emailVerified:
+        type: boolean
+      status:
+        type: string
+      created:
+        type: string
+        format: date-time
+      lastUpdated:
+        type: string
+        format: date-time
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - email
+    additionalProperties: false
+  todo:
+    properties:
+      name:
+        type: string
+      priority:
+        type: string
+      fileName:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+    additionalProperties: false
+  ObjectID:
+    type: string
+    pattern: '^[a-fA-F\d]{24}$'

@@ -1,0 +1,24 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory",
+    "file": "data.db"
+  },
+  "mongo": {
+    "host": "ds145053.mlab.com",
+    "port": 45053,
+    "url": "mongodb://demo:demo123@ds145053.mlab.com:45053/tododb",
+    "database": "tododb",
+    "password": "demo123",
+    "name": "mongo",
+    "user": "demo",
+    "connector": "mongodb"
+  },
+  "filesystem": {
+    "name": "filesystem",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "storage",
+    "nameConflict": "makeUnique"
+  }
+}
